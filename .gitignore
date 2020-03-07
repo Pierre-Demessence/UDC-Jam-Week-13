@@ -489,3 +489,12 @@ healthchecksdb
 MigrationBackup/
 
 # End of https://www.gitignore.io/api/rider,unity,visualstudio,visualstudiocode
+
+
+Assets/Plugins/Sirenix/*
+!/Assets/Plugins/Sirenix/Assemblies/
+Assets/Plugins/Sirenix/Assemblies/*
+!/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll
+!/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll.meta
+!/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.xml
+!/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.xml.meta
