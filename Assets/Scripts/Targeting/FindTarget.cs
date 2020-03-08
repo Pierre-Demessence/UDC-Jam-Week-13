@@ -38,7 +38,9 @@ public class FindTarget : MonoBehaviour
 
     private void Update()
     {
-        Target = _targetComparator.Find(_targetsFinder.Find());
+        var potentialTargets = _targetsFinder.Find();
+        Debug.Log((potentialTargets));
+        Target = _targetComparator.Find(potentialTargets);
     }
 }
 

@@ -13,12 +13,13 @@ GameObject:
   - component: {fileID: 6571489600043710506}
   - component: {fileID: 6571489600043710511}
   - component: {fileID: 6571489600043710509}
-  - component: {fileID: 6571489600043710510}
   - component: {fileID: 6571489600043710508}
   - component: {fileID: 6571489600043710499}
   - component: {fileID: 6571489600043710497}
   - component: {fileID: 6571489600043710498}
   - component: {fileID: 2110699947}
+  - component: {fileID: -2644714961676471187}
+  - component: {fileID: -3753621152646588480}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -149,20 +150,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  _onTargetSeen:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6571489600043710511}
-        m_MethodName: SetTargetFromGameObject
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   _onTargetLost:
     m_PersistentCalls:
       m_Calls:
@@ -177,20 +164,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _targetComparator: {fileID: 6571489600043710510}
+  _onTargetSeen:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6571489600043710511}
+        m_MethodName: SetTargetFromGameObject
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _targetComparator: {fileID: -3753621152646588480}
   _targetsFinder: {fileID: 6571489600043710508}
---- !u!114 &6571489600043710510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6571489600043710507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84f9b72f44744bd1a7647fef0f63eeb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6571489600043710508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,3 +292,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1
+--- !u!114 &-2644714961676471187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6571489600043710507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d07f7ea28cabe84a9d7def79cce171e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color: 0
+  Sprite: {fileID: 6571489600043710505}
+--- !u!114 &-3753621152646588480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6571489600043710507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21956f15f7506be468e9cbcc3befdd6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
