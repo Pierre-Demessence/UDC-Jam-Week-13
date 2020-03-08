@@ -22,7 +22,7 @@ public class Move : MonoBehaviour
 
     private void Update()
     {
-        _rigidbody2D.velocity = _movements.FindAll(movement => movement).Aggregate(new Vector2(), (result, movement) => result + movement.Velocity());
+        _rigidbody2D.velocity = _movements.FindAll(movement => movement.enabled).Aggregate(new Vector2(), (result, movement) => result + movement.Velocity());
         if (!isMoving && _rigidbody2D.velocity != Vector2.zero)
         {
             isMoving = true;
