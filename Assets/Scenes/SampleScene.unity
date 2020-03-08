@@ -401,6 +401,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movements:
   - {fileID: 1431745816}
+  _onMoveStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1431745810}
+        m_MethodName: set_runtimeAnimatorController
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 9100000, guid: 5f9c9da1870aa584d8e74e4ac5d4a3d7,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.RuntimeAnimatorController,
+            UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onMoveEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1431745810}
+        m_MethodName: set_runtimeAnimatorController
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 9100000, guid: 4901543d9a1bd414ca65c42125ca6a37,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.RuntimeAnimatorController,
+            UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1431745818
 MonoBehaviour:
   m_ObjectHideFlags: 0
