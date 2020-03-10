@@ -3,5 +3,5 @@ using UnityEngine;
 
 public abstract class TargetsFinder : MonoBehaviour
 {
-    public abstract List<GameObject> Find();
+    public abstract IEnumerable<GameObject> Find(IEnumerable<GameObject> possibleTargets);
 }

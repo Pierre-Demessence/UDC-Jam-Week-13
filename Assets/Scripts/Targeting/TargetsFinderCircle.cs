@@ -1,19 +1,14 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class TargetsFinderCircle : TargetsFinder
 {
-    private readonly Collider2D[] _availableTargets = new Collider2D[10];
-    [SerializeField] private float _radius = 3;
-    [SerializeField] private LayerMask _targetLayer;
+    [SerializeField] [Min(0)] private float _radius = 3;
 
-    public override List<GameObject> Find()
+    public override IEnumerable<GameObject> Find(IEnumerable<GameObject> possibleTargets)
     {
-        Array.Clear(_availableTargets, 0, 10);
-        Physics2D.OverlapCircleNonAlloc(transform.position, _radius, _availableTargets, _targetLayer);
-        return _availableTargets.ToList().FindAll(c => c).ConvertAll(input => input.gameObject);
+        return possibleTargets.Where(target => Vector2.Distance(transform.position, target.transform.position) <= _radius);
     }
 
     private void OnDrawGizmosSelected()
@@ -21,19 +16,4 @@ public class TargetsFinderCircle : TargetsFinder
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, _radius);
     }
-
-    /*
-private void OnDrawGizmosSelected()
-    {
-        float totalFOV = 70.0f;
-        float rayRange = 10.0f;
-        float halfFOV = totalFOV / 2.0f;
-        Quaternion leftRayRotation = Quaternion.AngleAxis( -halfFOV, Vector3.up );
-        Quaternion rightRayRotation = Quaternion.AngleAxis( halfFOV, Vector3.up );
-        Vector3 leftRayDirection = leftRayRotation * transform.forward;
-        Vector3 rightRayDirection = rightRayRotation * transform.forward;
-        Gizmos.DrawRay( transform.position, leftRayDirection * rayRange );
-        Gizmos.DrawRay( transform.position, rightRayDirection * rayRange );
-    }
-*/
 }
