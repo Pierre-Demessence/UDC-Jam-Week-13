@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6104918863904418026}
   - component: {fileID: 6104918863904418027}
   - component: {fileID: 6104918863904418031}
-  - component: {fileID: 6104918863904418024}
   - component: {fileID: 6104918863904418025}
   - component: {fileID: 6104918863904418030}
   - component: {fileID: 6104918863904418029}
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6104918863904418020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.718, y: -0.89, z: 0}
-  m_LocalScale: {x: 0.23836, y: 0.23836, z: 0.23836}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b57092fa7823ea1488b13b1d9a48ab20, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,18 +101,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &6104918863904418024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6104918863904418020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bffc5d2b83dca84d88a42514a479778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6104918863904418025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,8 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d07f7ea28cabe84a9d7def79cce171e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color: 2
-  Sprite: {fileID: 0}
+  _color: 0
+  _sprite: {fileID: 6104918863904418027}
 --- !u!50 &6104918863904418030
 Rigidbody2D:
   serializedVersion: 4

@@ -7,13 +7,11 @@ public class FollowCamera : MonoBehaviour
     [SerializeField] private GameObject _target;
     private Vector3 _targetPos;
 
-    // Use this for initialization
     private void Start()
     {
         _targetPos = transform.position;
     }
 
-    // Update is called once per frame
     private void FixedUpdate()
     {
         if (!_target) return;

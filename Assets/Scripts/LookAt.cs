@@ -11,11 +11,6 @@ public class LookAt : MonoBehaviour
         Target = target;
     }
 
-    public void SetTargetFromGameObject(GameObject target)
-    {
-        Target = target == null ? (Vector3?) null : target.transform.position;
-    }
-
     private void Update()
     {
         if (!Target.HasValue) return;

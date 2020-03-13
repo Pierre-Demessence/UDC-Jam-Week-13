@@ -1,15 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Sirenix.OdinInspector;
+using UnityEditor.Experimental.SceneManagement;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Team : MonoBehaviour
 {
-    [FormerlySerializedAs("color")] [SerializeField]
-    private Colors _color;
-    
-    [FormerlySerializedAs("sprite")] [SerializeField]
-    public SpriteRenderer Sprite;
+    private readonly Dictionary<Colors, Color> _colorToColor = new Dictionary<Colors, Color>
+    {
+        {Colors.Red, UnityEngine.Color.red},
+        {Colors.Blue, UnityEngine.Color.blue},
+        {Colors.Green, UnityEngine.Color.green}
+    };
+    [SerializeField] [EnumToggleButtons] private Colors _color;
+
+    [SerializeField] private SpriteRenderer _sprite;
 
     public Colors Color
     {
@@ -21,20 +25,19 @@ public class Team : MonoBehaviour
         }
     }
 
-    readonly Dictionary<Colors, UnityEngine.Color> _colorToColor = new Dictionary<Colors, UnityEngine.Color>()
-        {
-            { Colors.RED, UnityEngine.Color.red},
-            { Colors.BLUE, UnityEngine.Color.blue},
-            { Colors.GREEN, UnityEngine.Color.green},
-        };
-
     private void SetComponentColor()
     {
-        Sprite.color = _colorToColor[Color];
+        _sprite.color = _colorToColor[Color];
     }
 
     private void Start()
     {
+        SetComponentColor();
+    }
+
+    private void OnValidate()
+    {
+        if (PrefabStageUtility.GetCurrentPrefabStage() != null) return;
         SetComponentColor();
     }
 }

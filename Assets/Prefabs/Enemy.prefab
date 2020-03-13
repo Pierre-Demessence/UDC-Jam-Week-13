@@ -13,16 +13,17 @@ GameObject:
   - component: {fileID: 6571489600043710506}
   - component: {fileID: 6571489600043710511}
   - component: {fileID: 6571489600043710509}
-  - component: {fileID: 6571489600043710508}
   - component: {fileID: 6571489600043710499}
   - component: {fileID: 6571489600043710497}
   - component: {fileID: 6571489600043710498}
   - component: {fileID: 2110699947}
   - component: {fileID: -2644714961676471187}
-  - component: {fileID: -3753621152646588480}
+  - component: {fileID: 6571489600043710508}
   - component: {fileID: 1797996695}
   - component: {fileID: 1797996696}
   - component: {fileID: 1797996697}
+  - component: {fileID: 80467867}
+  - component: {fileID: 80467868}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -84,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 81d3973b92a989e4f9a2ed7409a450d9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -138,68 +139,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f9b3626ff54f1a9d37abcc8073fd65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _keepLookingForTargets: 1
-  _onTargetAcquired:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2110699947}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  _onTargetLost:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2110699947}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _onTargetSeen:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6571489600043710511}
-        m_MethodName: SetTargetFromGameObject
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _targetComparators: []
   _targetsFinders:
   - {fileID: 1797996696}
+  - {fileID: 80467868}
   - {fileID: 6571489600043710508}
   - {fileID: 1797996695}
   - {fileID: 1797996697}
---- !u!114 &6571489600043710508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6571489600043710507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eae791e877ea494e8bb57e313b84c5ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _radius: 10
 --- !u!58 &6571489600043710499
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -295,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4639a64f6a8941f498ee1d91bc7c86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0
+  _speed: 3
 --- !u!114 &-2644714961676471187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,9 +253,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d07f7ea28cabe84a9d7def79cce171e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color: 0
-  Sprite: {fileID: 6571489600043710505}
---- !u!114 &-3753621152646588480
+  _color: 1
+  _sprite: {fileID: 6571489600043710505}
+--- !u!114 &6571489600043710508
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -319,9 +264,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6571489600043710507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21956f15f7506be468e9cbcc3befdd6e, type: 3}
+  m_Script: {fileID: 11500000, guid: eae791e877ea494e8bb57e313b84c5ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _radius: 10
 --- !u!114 &1797996695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,4 +310,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _obstacleLayers:
     serializedVersion: 2
-    m_Bits: 3072
+    m_Bits: 2048
+--- !u!114 &80467867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6571489600043710507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c6975f191f06f4459b8e003d6240c89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _findTarget: {fileID: 6571489600043710509}
+  _lookAt: {fileID: 6571489600043710511}
+  _move: {fileID: 6571489600043710498}
+--- !u!114 &80467868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6571489600043710507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26048373693a401ca5b611ba412b4fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
