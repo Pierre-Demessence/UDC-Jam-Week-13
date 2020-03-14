@@ -6,6 +6,11 @@ public class LookAt : MonoBehaviour
 
     private Vector3? Target { get; set; }
 
+    public void Stop()
+    {
+        Target = null;
+    }
+
     public void SetTarget(Vector3 target)
     {
         Target = target;
