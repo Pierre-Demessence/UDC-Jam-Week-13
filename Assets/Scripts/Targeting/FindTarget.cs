@@ -24,9 +24,7 @@ public class FindTarget : MonoBehaviour
         Gizmos.color = Color.red;
         var targetsEnumerator = Targets?.GetEnumerator();
         while (targetsEnumerator != null && targetsEnumerator.MoveNext())
-        {
             if (targetsEnumerator.Current != null)
                 Gizmos.DrawLine(transform.position, targetsEnumerator.Current.transform.position);
-        }
     }
 }
