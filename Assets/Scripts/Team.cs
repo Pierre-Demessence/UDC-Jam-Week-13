@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Sirenix.OdinInspector;
-using UnityEditor.Experimental.SceneManagement;
 using UnityEngine;
 
 public class Team : MonoBehaviour
@@ -37,7 +36,7 @@ public class Team : MonoBehaviour
 
     private void OnValidate()
     {
-        if (PrefabStageUtility.GetCurrentPrefabStage() != null) return;
+        // if (PrefabStageUtility.GetCurrentPrefabStage() != null) return;
         SetComponentColor();
     }
 }
