@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Sirenix.Utilities;
 using UnityEditor;
 using UnityEngine;
 
@@ -16,13 +15,16 @@ public class SceneManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         _scenesToPreLoad = _sceneToPreLoad ? new[] {_sceneToPreLoad} : new SceneAsset[] { };
+        foreach (var scene in _scenesToPreLoad) StartCoroutine(PreLoadScene(scene));
+    }
 
-        _scenesToPreLoad.ForEach(scene =>
-        {
-            _asyncOperations[scene] = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(scene.name);
-            _asyncOperations[scene].allowSceneActivation = false;
-            _asyncOperations[scene].completed += o => _asyncOperations.Remove(scene);
-        });
+    private IEnumerator PreLoadScene(SceneAsset scene)
+    {
+        yield return null;
+        _asyncOperations[scene] = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(scene.name);
+        _asyncOperations[scene].allowSceneActivation = false;
+        _asyncOperations[scene].completed += o => _asyncOperations.Remove(scene);
+        while (!_asyncOperations[scene].isDone) yield return null;
     }
 
     public void LoadScene(SceneAsset scene)
