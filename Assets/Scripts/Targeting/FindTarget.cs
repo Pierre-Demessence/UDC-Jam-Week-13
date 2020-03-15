@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
 using Sirenix.OdinInspector;
-using Sirenix.Utilities;
 using UnityEngine;
 
 public class FindTarget : MonoBehaviour
@@ -23,6 +22,11 @@ public class FindTarget : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Targets?.ForEach(target => Gizmos.DrawLine(transform.position, target.transform.position));
+        var targetsEnumerator = Targets?.GetEnumerator();
+        while (targetsEnumerator != null && targetsEnumerator.MoveNext())
+        {
+            if (targetsEnumerator.Current != null)
+                Gizmos.DrawLine(transform.position, targetsEnumerator.Current.transform.position);
+        }
     }
 }
