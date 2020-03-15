@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material
+  m_Name: SpriteShadowMaterial
   m_Shader: {fileID: 4800000, guid: a8d472795d8c2b8499ce532b8aecb389, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _ALPHATEST_ON
   m_LightmapFlags: 4
