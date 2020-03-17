@@ -8,9 +8,4 @@ public class MainMenuMusicManager : MonoBehaviour
         if (objs.Length > 1) Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
     }
-
-    public void Destroy()
-    {
-        Destroy(gameObject);
-    }
 }
